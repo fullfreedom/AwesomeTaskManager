@@ -1,0 +1,28 @@
+<div class="task__list">
+    <div class="task__item" *ngIf="tasks.length == 0">
+        <div class="task__item-title">Task list is empty</div>
+    </div>
+    <div class="task__item" *ngFor="let task of tasks;
+                                    let index = index;
+                                    let first = first;
+                                    let last = last;"
+                        [ngClass]="{
+                                    'task__item--warning': task.deadline - timer < 259200000 && timer < task.deadline &&
+                                                           !task.complited,
+                                    'task__item--danger': timer > task.deadline && !task.complited,
+                                    'task__item--complited': task.complited
+                                   }">
+        <div class="task__item-controls float-left">
+            <md-icon (click)="toggle(index)">{{ task.complited ? 'check_circle' : 'done' }}</md-icon>
+        </div>
+        <div class="task__item-controls float-right">
+            <md-icon (click)="detail(index)">visibility</md-icon>
+            <md-icon (click)="edit(index)">mode_edit</md-icon>
+            <md-icon (click)="remove(index)">delete_forever</md-icon>
+            <md-icon class="task__item-control--up" [class.last]="last" *ngIf="!first" (click)="move(index, -1)">keyboard_arrow_up</md-icon>
+            <md-icon class="task__item-control--down" [class.first]="first" *ngIf="!last" (click)="move(index, 1)">keyboard_arrow_down</md-icon>
+        </div>
+        <div class="task__item-title">{{task.title}}</div>
+        <div class="task__item-deadline">Deadline: {{task.deadline | date: "dd.MM.y"}}</div>
+    </div>
+</div>

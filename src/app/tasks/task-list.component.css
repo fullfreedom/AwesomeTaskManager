@@ -1,0 +1,66 @@
+.task__list {
+    width: 680px;
+}
+.task__item {
+    position: relative;
+    padding: 15px 40px 15px 15px;
+    background: #fbfbfb;
+}
+.task__item--warning {
+    background: #ffa657;
+}
+.task__item--danger {
+    background: #f13f3f;
+}
+.task__item--complited {
+    background: #e0e0e0;
+}
+.task__item-title {
+    font-size: 18px;
+}
+.task__item-deadline {
+    font-size: 14px;
+}
+.task__item.task__item--complited {
+    color: #888;
+}
+.task__item.task__item--complited .task__item-title {
+    text-decoration: line-through;
+}
+.task__item.task__item--complited .task__item-deadline {
+    text-decoration: line-through;
+}
+.task__item-controls {
+    padding-top: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.task__item-controls .mat-icon {
+    cursor: pointer;
+    user-select: none;
+}
+.task__item-control--up, .task__item-control--down {
+    position: absolute;
+    right: 13px;
+}
+.task__item-control--up {
+    top: 11px;
+}
+.task__item-control--down {
+    top: 31px;
+}
+.task__item-control--up.last {
+    top: 20px;
+}
+.task__item-control--down.first {
+    top: 22px;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.task__item-controls.float-left {
+    margin-right: 15px;
+}

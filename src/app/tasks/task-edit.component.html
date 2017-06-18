@@ -1,0 +1,25 @@
+<h3>Edit task</h3>
+<form class="task__form" (ngSubmit)="update(taskEditForm);" #taskEditForm="ngForm">
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="Title" name="title" [ngModel]="task.title" required>
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container class="full-width">
+      <textarea mdInput placeholder="Description" name="description" [ngModel]="task.description" required></textarea>
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <input mdInput type="date" placeholder="Choose a date" name="deadline"  [ngModel]="task.deadline | date: 'y-MM-dd'" required>
+    </md-input-container>
+  </div>
+  <div>
+    <md-checkbox name="complited" [ngModel]="task.complited">Complete</md-checkbox>
+  </div>
+  <div class="task__form-control">
+    <button md-raised-button type="submit" class="float-right" [disabled]="taskEditForm.form.invalid">Save</button>
+    <button md-raised-button routerLink="/create">Back</button>
+  </div>
+</form>

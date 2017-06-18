@@ -1,0 +1,10 @@
+<h3>Detail</h3>
+<div class="task__detail-title">{{item.title}}</div>
+<div class="task__detail-description">{{item.description}}</div>
+<div class="task__detail-deadline">Deadline: {{item.deadline | date: "dd.MM.y"}}</div>
+<div class="task__detail-control">
+  <button md-raised-button (click)="edit(index)" class="float-right">Edit</button>
+  <button md-raised-button routerLink="/create">New task</button>
+</div>
+
+

@@ -1,0 +1,24 @@
+<h3>Create new task</h3>
+<form id="form-add" class="task__form" (ngSubmit)="createTask(); taskForm.resetForm();" #taskForm="ngForm">
+  <div>
+    <md-input-container>
+      <input mdInput placeholder="Title" name="title" [(ngModel)]="title" required>
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container class="full-width">
+      <textarea mdInput placeholder="Description" name="description" [(ngModel)]="description" required></textarea>
+    </md-input-container>
+  </div>
+  <div>
+    <md-input-container>
+      <input mdInput type="date" placeholder="Choose a date" name="deadline" [(ngModel)]="deadline" required>
+    </md-input-container>
+  </div>
+  <div>
+    <div class="task__form-control">
+      <button md-raised-button type="submit" [disabled]="taskForm.form.invalid">Add new task</button>
+    </div>
+  </div>
+</form>
+

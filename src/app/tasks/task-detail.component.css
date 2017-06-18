@@ -1,0 +1,16 @@
+.task__detail-title {
+    margin-bottom: 12px;
+    font-size: 22px;
+    line-height: 1.2;
+}
+.task__detail-description {
+    margin-bottom: 12px;
+}
+.task__detail-deadline {
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+
+
+

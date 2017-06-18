@@ -16,10 +16,12 @@ const appRoutes: Routes = [
   {
     path: 'detail/:index',
     component: TaskDetailComponent,
+    pathMatch: 'full'
   },
   {
     path: 'edit/:index',
-    component: TaskEditComponent
+    component: TaskEditComponent,
+    pathMatch: 'full'
   },
   {
     path: 'create',
